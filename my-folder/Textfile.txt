@@ -1,0 +1,141 @@
+using System;
+
+namespace Core_ConsoleApp1
+{
+    internal class ArraysDemo
+    {
+        public static void m1()
+        {
+            // One Dimensional Array
+            int[] numbers = { 1, 2, 3, 4, 5 };
+
+            // Empty array with size 5
+            int[] numbers2 = new int[5];
+
+            // Assigning values
+            numbers2[0] = 10;
+            numbers2[1] = 20;
+            numbers2[2] = 30;
+            numbers2[3] = 40;
+            numbers2[4] = 50;
+
+            // Accessing first element
+            Console.WriteLine(numbers[0]);
+
+            // Using for loop
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+
+            // Using foreach loop
+            foreach (int a in numbers)
+            {
+                Console.WriteLine(a);
+            }
+
+            // Printing second array
+            Console.WriteLine("Second Array:");
+
+            foreach (int b in numbers2)
+            {
+                Console.WriteLine(b);
+            }
+        }
+
+        public static void matrix()
+        {
+            int[,] matrix = new int[2, 3] {
+            { 1, 2, 3 },
+            { 4, 5, 6 }
+            };
+
+            Console.WriteLine(matrix[1, 2]); // Output: 6
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write(matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Using for each");
+            // compiler error because matrix.GetLength(1)
+            // returns a single integer (the number of columns)
+            // and a foreach loop cannot iterate over a single number
+            // foreach (int row in matrix)
+        }
+
+        public static void JaggedArrays()
+        {
+            int[][] jaggedArray = new int[3][];
+            jaggedArray[0] = new int[] { 1, 2 };
+            jaggedArray[1] = new int[] { 3, 4, 5 };
+            jaggedArray[2] = new int[] { 6 };
+
+            Console.WriteLine(jaggedArray[1][2]);
+            foreach (int[] row in jaggedArray) // Gets each row (inner array)
+            {
+                foreach (int val in row) // Gets each column value in that row
+                {
+                    Console.Write(val + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void jagged2()
+        {
+            Console.WriteLine("\n--- Jagged Array 2 Demo (User Input) ---");
+
+            Console.WriteLine("Enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+
+            // Declare jagged array
+            int[][] jaggedArray = new int[rows][];
+
+            // Input for each row
+            for (int i = 0; i < rows; i++)
+            {
+                Console.WriteLine($"Enter number of elements in row {i}: ");
+                int cols = int.Parse(Console.ReadLine());
+                jaggedArray[i] = new int[cols];
+                Console.WriteLine($"Enter {cols} elements for row {i}: ");
+
+                for (int j = 0; j < cols; j++)
+                {
+                    jaggedArray[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            // Display the jagged array
+            Console.WriteLine("\n--- Your Jagged Array ---");
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                Console.Write($"Row {i}: ");
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write(jaggedArray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            m1();
+
+            Console.WriteLine("\n--- 2D Matrix Demo ---\n");
+            matrix();
+
+            Console.WriteLine("\n--- Jagged Array Demo ---\n");
+            JaggedArrays();
+
+            jagged2();
+
+            Console.ReadLine();
+        }
+    }
+}
