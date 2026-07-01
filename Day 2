@@ -1,0 +1,58 @@
+using System;
+
+namespace MPOnline
+{
+    public class MyClass
+    {
+        // Constructor
+        public MyClass()
+        {
+        }
+
+        // Method
+        public void variableTest()
+        {
+            // Integer types
+            int age = 25;
+            long portfolio = 7800000000;
+            short smallNumber = 32000;
+
+            Console.WriteLine($"Age {age}, Portfolio {portfolio}, SmallNumber -- {smallNumber}");
+            Console.WriteLine("Age {0}, Portfolio {1}, SmallNumber -- {2}", age, portfolio, smallNumber);
+
+            // Floating-point types
+            float pi = 3.14f;
+            double price = 99.99;
+            decimal salary = 45000.75m;
+
+            Console.WriteLine($"Pi {pi}, Price {price}, Salary {salary}");
+
+            // Boolean
+            bool isActive = true;
+            Console.WriteLine($"IsActive : {isActive}");
+
+            // Character and String
+            char grade = 'A';
+            string name = "Aryan";
+
+            Console.WriteLine($"Grade : {grade}, Name : {name}");
+
+            // Object type
+            object obj = "Hello World";
+            Console.WriteLine($"Object Value : {obj}");
+
+            // var keyword
+            var city = "Pune"; // inferred as string
+            var count = 10;    // inferred as int
+
+            Console.WriteLine($"City : {city}, Count : {count}");
+        }
+
+        // Main Method
+        static void Main(string[] args)
+        {
+            MyClass obj = new MyClass();
+            obj.variableTest();
+        }
+    }
+}
