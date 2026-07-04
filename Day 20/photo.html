@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lens & Light · Photography Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .gallery-header h1 {
+            font-size: 2.4rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #1e1e1e;
+        }
+
+        .gallery-header h1 span {
+            font-weight: 600;
+            color: #a67c52;
+        }
+
+        .gallery-header p {
+            color: #777;
+            font-size: 1rem;
+            margin-top: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 200px;
+            max-width: 320px;
+            min-width: 160px;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #eae5de;
+        }
+
+        .gallery-item .caption {
+            padding: 0.8rem 1rem 1rem;
+            font-size: 0.9rem;
+            color: #444;
+            background: #ffffff;
+            border-top: 1px solid #f0ebe4;
+        }
+
+        .gallery-item .caption strong {
+            display: block;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 0.2rem;
+        }
+
+        .gallery-item .caption span {
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e6e0d8;
+            color: #aaa;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        .footer i {
+            color: #c0392b;
+            margin: 0 0.2rem;
+        }
+
+        @media (max-width: 700px) {
+            .gallery-item {
+                flex: 1 1 150px;
+                max-width: 260px;
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+            .gallery-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 1rem; }
+            .gallery-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="gallery-header">
+        <h1>📸 <span>Lens</span> &amp; <span>Light</span></h1>
+        <p>a photography blog · moments frozen in time</p>
+    </header>
+
+    <div class="gallery-grid">
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1015/400/300" alt="Mountain landscape" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Misty Peaks</strong>
+                <span>Dolomites, Italy · 2025</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1018/400/300" alt="City street" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Urban Rhythm</strong>
+                <span>Tokyo, Japan · 2024</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1035/400/300" alt="Forest path" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Whispering Woods</strong>
+                <span>Black Forest, Germany · 2023</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1040/400/300" alt="Sunset beach" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Golden Hour</strong>
+                <span>Maldives · 2025</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1044/400/300" alt="Water lily" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Lotus Dream</strong>
+                <span>Kerala, India · 2024</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1067/400/300" alt="Night sky" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Starry Canvas</strong>
+                <span>Atacama, Chile · 2025</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1074/400/300" alt="Autumn leaves" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Falling for Autumn</strong>
+                <span>Vermont, USA · 2024</span>
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="https://picsum.photos/id/1084/400/300" alt="Owl portrait" loading="lazy" />
+            <figcaption class="caption">
+                <strong>Night Guardian</strong>
+                <span>Wildlife · 2025</span>
+            </figcaption>
+        </figure>
+
+    </div>
+
+    <footer class="footer">
+        <i class="fas fa-camera"></i> Lens &amp; Light · all rights reserved
+        <span style="display:inline-block; margin:0 0.6rem;">|</span>
+        <i class="fas fa-heart"></i> made with passion
+    </footer>
+
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+</body>
+</html>
