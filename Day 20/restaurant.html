@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu · Reviews</title>
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background:#f5f2ed; padding:1.5rem; }
+    .container { max-width:1000px; margin:0 auto; background:#fff; border-radius:24px; padding:1.8rem; box-shadow:0 8px 30px rgba(0,0,0,0.06); }
+    h1 { font-size:2rem; }
+    .hero { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-bottom:2px solid #eee; padding-bottom:1rem; margin-bottom:1.5rem; }
+    .badge { background:#fef6e7; padding:0.3rem 1rem; border-radius:30px; font-weight:500; }
+    .multimedia { background:#f8f4ef; border-radius:20px; padding:1rem 1.5rem; margin-bottom:2rem; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; }
+    .multimedia audio, .multimedia video { max-width:180px; height:38px; border-radius:40px; }
+    .multimedia video { max-width:200px; height:auto; border-radius:12px; background:#222; }
+    .menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .category h3 { border-bottom:2px solid #ddd; padding-bottom:0.3rem; margin-bottom:0.8rem; }
+    .item { display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px dashed #eee; }
+    .item:last-child { border-bottom:none; }
+    .price { font-weight:bold; color:#a3512f; }
+    .reviews { margin-top:2rem; border-top:2px solid #eee; padding-top:1.5rem; }
+    .review-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.2rem; }
+    .review-card { background:#fcfaf7; border-radius:16px; padding:1rem; border:1px solid #ede7df; }
+    .stars { color:#f5b342; }
+    .footer { text-align:center; margin-top:2rem; color:#888; font-size:0.8rem; }
+    @media (max-width:700px){ .menu-grid { grid-template-columns:1fr; } .multimedia audio, .multimedia video { max-width:100%; width:100%; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div><h1>🍽️ La Piazza</h1><span style="color:#777;">Italian · Mediterranean</span></div>
+    <div><span class="badge"><i class="fas fa-star"></i> 4.8 (240+ reviews)</span></div>
+  </div>
+
+  <!-- Multimedia Controls -->
+  <div class="multimedia">
+    <i class="fas fa-headphones" style="color:#b85c3a;"></i>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    </audio>
+    <i class="fas fa-video" style="color:#b85c3a; margin-left:0.5rem;"></i>
+    <video controls muted poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90' viewBox='0 0 160 90'%3E%3Crect width='160' height='90' fill='%233d2e1e'/%3E%3Ctext x='20' y='50' font-family='sans-serif' font-size='12' fill='%23ddd'%3E🍝 Promo%3C/text%3E%3C/svg%3E">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu-grid">
+    <div class="category">
+      <h3><i class="fas fa-seedling"></i> Antipasti</h3>
+      <div class="item"><span>Bruschetta <span style="background:#eee; font-size:0.7rem; padding:0 0.5rem; border-radius:12px;">Veg</span></span><span class="price">$9</span></div>
+      <div class="item"><span>Calamari Fritti</span><span class="price">$14</span></div>
+    </div>
+    <div class="category">
+      <h3><i class="fas fa-egg"></i> Pasta</h3>
+      <div class="item"><span>Tagliatelle al Tartufo</span><span class="price">$24</span></div>
+      <div class="item"><span>Spaghetti Carbonara</span><span class="price">$20</span></div>
+    </div>
+    <div class="category">
+      <h3><i class="fas fa-utensil-spoon"></i> Secondi</h3>
+      <div class="item"><span>Bistecca alla Fiorentina</span><span class="price">$42</span></div>
+      <div class="item"><span>Melanzane alla Parmigiana <span style="background:#eee; font-size:0.7rem; padding:0 0.5rem; border-radius:12px;">Veg</span></span><span class="price">$19</span></div>
+    </div>
+    <div class="category">
+      <h3><i class="fas fa-mug-hot"></i> Dolci</h3>
+      <div class="item"><span>Tiramisu</span><span class="price">$10</span></div>
+      <div class="item"><span>Panna Cotta</span><span class="price">$9</span></div>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="reviews">
+    <h2><i class="fas fa-star" style="color:#b85c3a;"></i> Guest Reviews</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div><strong>Alessia R.</strong> <span style="color:#999; font-size:0.8rem;">2d ago</span></div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="font-size:0.9rem;">“Tagliatelle was divine — perfect texture.”</div>
+      </div>
+      <div class="review-card">
+        <div><strong>Marco V.</strong> <span style="color:#999; font-size:0.8rem;">5d ago</span></div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="font-size:0.9rem;">“Best bistecca in town — highly recommend.”</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">La Piazza · 42 Via Roma · <i class="fas fa-phone"></i> +1 (555) 204-9876</div>
+</div>
+</body>
+</html>
