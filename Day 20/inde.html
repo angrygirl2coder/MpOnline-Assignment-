@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0ede8;
+            padding: 2rem 1.5rem;
+            color: #1e1e1e;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e2a3a;
+            padding: 0.6rem 2rem;
+            border-radius: 40px;
+            margin-bottom: 2rem;
+        }
+
+        .navbar .brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e8b84b;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .navbar .brand i {
+            color: #f0ede8;
+            margin-right: 0.2rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 2.2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #d6d2cb;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.3rem 0.1rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .nav-list a:hover,
+        .nav-list a.active {
+            color: #ffffff;
+            border-bottom-color: #e8b84b;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .gallery-item {
+            flex: 1 1 160px;
+            max-width: 200px;
+            min-width: 140px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: 0.25s ease;
+            border: 1px solid #eee8e0;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: #d9d0c4;
+        }
+
+        .gallery-item .label {
+            padding: 0.6rem 0.8rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1e1e1e;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .trends-section {
+            background: #f8f5f0;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 1rem 0 0.5rem;
+            border-left: 5px solid #e8b84b;
+        }
+
+        .trends-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e2a3a;
+            margin-bottom: 0.3rem;
+        }
+
+        .trends-section p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .trends-section .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .trends-section .tags span {
+            background: #e8e0d6;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #3d3d3d;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e6e0d8;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                padding: 0.8rem 1.2rem;
+                border-radius: 28px;
+                gap: 0.4rem;
+            }
+            .nav-list {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .gallery-item {
+                flex: 1 1 120px;
+                max-width: 160px;
+                min-width: 100px;
+            }
+            .gallery-item img {
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.8rem;
+            }
+            .container {
+                padding: 0.8rem;
+                border-radius: 12px;
+            }
+            .navbar {
+                border-radius: 20px;
+                padding: 0.6rem 0.8rem;
+            }
+            .nav-list {
+                gap: 0.8rem;
+            }
+            .nav-list a {
+                font-size: 0.8rem;
+            }
+            .gallery-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .gallery-item img {
+                height: 160px;
+            }
+            .trends-section {
+                padding: 1rem 1.2rem;
+            }
+            .trends-section h2 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="navbar">
+            <a href="#" class="brand"><i>✦</i> MiniWeb</a>
+            <ul class="nav-list">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1040/400/300" alt="Beach" loading="lazy" />
+                <div class="label">Beach</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1015/400/300" alt="Mountains" loading="lazy" />
+                <div class="label">Mountains</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1018/400/300" alt="City" loading="lazy" />
+                <div class="label">City</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1035/400/300" alt="Forest" loading="lazy" />
+                <div class="label">Forest</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1067/400/300" alt="Desert" loading="lazy" />
+                <div class="label">Desert</div>
+            </div>
+        </div>
+
+        <div class="trends-section">
+            <h2>📰 Web Design Trends</h2>
+            <p>HTML5 and CSS, along with modern frameworks, are shaping the future of web design. Focus on performance, accessibility, and seamless user experiences.</p>
+            <div class="tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Flexbox</span>
+                <span>Grid</span>
+                <span>Responsive</span>
+            </div>
+        </div>
+
+        <div class="footer-text">Mini Webpage · simple &amp; clean</div>
+
+    </div>
+
+</body>
+</html>
